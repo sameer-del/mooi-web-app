@@ -4,11 +4,13 @@ import Dashboard from "../src/pages/Dashboard";
 import Login from "../src/pages/Login";
 import axios from "axios";
 import DataEntry from "../src/pages/DataEntry";
+import DataView from "../src/pages/DataView";
 import { Toaster } from "react-hot-toast";
 import { UserContextProvider } from "../context/userContex";
 
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
 function App() {
@@ -22,6 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/data-entry" element={<DataEntry />} />
+          <Route path="/dataview" element={<DataView />} />
         </Routes>
       </BrowserRouter>
     </UserContextProvider>

@@ -1,5 +1,7 @@
 const userModel = require("../models/model.js");
 const people = require("../models/model.js");
+const mooi = require("../models/data.js");
+
 const { hashPassword, comparePassword } = require("../helpers/help.js");
 
 const jwt = require("jsonwebtoken");
@@ -76,5 +78,32 @@ const getProfile = (req, res) => {
     res.json(user); // Send the user data if token verification succeeds
   });
 };
+const moiData = async (req, res) => {
+  const { f1, a1, f2, a2, f3, a3, f4, a4 } = req.body;
+  const newFormData = new mooi({
+    f1,
+    a1,
+    f2,
+    a2,
+    f3,
+    a3,
+    f4,
+    a4,
+  });
+  const savedData = await newFormData.save();
+  console.log("Received form data:", req.body);
+  /* console.log(userData); */
 
-module.exports = { newRegister, loginUser, getProfile };
+  res.send("data received");
+};
+
+const getData = async (req, res) => {
+  try {
+    const latestData = await mooi.findOne().sort({ _id: -1 });
+    console.log("Data received:", latestData);
+    res.send(latestData);
+  } catch (error) {
+    console.log(error);
+  }
+};
+module.exports = { newRegister, loginUser, getProfile, moiData, getData };
