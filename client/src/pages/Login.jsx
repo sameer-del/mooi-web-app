@@ -28,7 +28,7 @@ const Login = () => {
         email,
         password,
       });
-      
+
       //this data error is handled in backend the object error is called
       if (data.error) {
         toast.error(data.error);
@@ -45,22 +45,8 @@ const Login = () => {
     }
   };
   return (
-    <div className="h-[100vh] bg-slate-400 text-black flex items-center justify-center flex-col">
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 3,
-          width: "450px",
-          margin: "auto",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#fff",
-          height: "400px",
-          borderRadius: "15px",
-          color: "white ",
-        }}
-      >
+    <div className=" register h-[100vh] bg-slate-400 text-black flex items-center justify-center flex-col">
+      <div className="card w-[450px] flex justify-center items-center h-[400px]">
         <form
           className="flex flex-col gap-[50px] w-full h-full m-auto justify-center items-center"
           onSubmit={loginUser}
@@ -96,16 +82,19 @@ const Login = () => {
               </InputAdornment>
             }
           />
-          <Button
+          {/*  <Button
             variant="contained"
             color="primary"
             type="submit"
             className=" py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md"
           >
             submit
-          </Button>
+          </Button> */}
+          <button type="submit" className="bg-white ">
+            submit
+          </button>
         </form>
-      </Box>
+      </div>
     </div>
   );
 };

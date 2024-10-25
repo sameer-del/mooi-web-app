@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
+import Reload from "../src/components/Reload";
 
 // Initialize UserContext
 export const UserContext = createContext({});
@@ -28,7 +29,7 @@ export function UserContextProvider({ children }) {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Optionally, add a loading spinner
+    return <Reload />; // Optionally, add a loading spinner
   }
 
   return (

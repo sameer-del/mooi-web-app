@@ -6,9 +6,9 @@ const Nav = () => {
   const { user } = useContext(UserContext);
 
   return (
-    <nav className="w-full h-[100px] bg-slate-500 flex justify-between items-center ">
+    <nav className="register w-full h-[130px] text-white flex justify-between items-center ">
       <div className="ml-8 text-[30px]">
-        <h1>Sameer</h1>
+        <h1>Mooi App</h1>
       </div>
       <div className="flex items-center justify-center">
         <h3 className="m-5 text-[20px]">{user.name}</h3>
@@ -16,7 +16,7 @@ const Nav = () => {
           sx={{
             fontSize: "50px",
             marginRight: "100px",
-            color: "black",
+            color: "white",
           }}
         />
       </div>

@@ -49,7 +49,7 @@ const DataEntry = () => {
 
   return (
     <form
-      className="w-full h-[100vh] bg-slate-400 border-black "
+      className="dataentry  w-full h-[85vh] pt-5 bg-slate-400 border-black "
       onSubmit={submitMethod}
     >
       <table className="dataContainer">
